@@ -17,25 +17,37 @@ Windows 用户下载 `.exe` 安装包，macOS 用户下载对应芯片架构的 
 
 ## 界面预览
 
+### 工作台
+
 ![workspace](docs/images/workspace.png)
 
-左侧按项目管理会话，中间是当前 AI CLI 终端，底部提供历史、指令库、任务队列和仪表盘入口。
+主界面用于按项目管理 AI CLI 会话。左侧是项目和会话列表，中间是当前终端工作区，底部提供历史、指令库、任务队列和仪表盘入口。
+
+### 新建会话
 
 ![new-session](docs/images/new-session.png)
 
 新建会话时可以选择 AI 工具、项目路径、终端 Shell 和运行权限。
 
+### 设置
+
 ![settings](docs/images/settings.png)
 
 设置页集中管理 Codex、Claude、Gemini、OpenCode 以及终端、网络、快捷键等本地配置。
+
+### 任务队列
 
 ![task-queue](docs/images/task-queue.png)
 
 任务队列适合把多条待处理事项排队发送到当前 AI CLI 会话。
 
+### 指令库
+
 ![commands](docs/images/commands.png)
 
 指令库内置常用 CLI 命令和提示片段，点击后可快速插入当前终端。
+
+### 仪表盘
 
 ![dashboard](docs/images/dashboard.png)
 

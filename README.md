@@ -1,187 +1,148 @@
-# AI CLI Box
+<div align="center">
+  <img src="docs/images/logo.png" alt="AI CLI Box" width="96" height="96" />
+  <h1 align="center">AI CLI Box</h1>
 
-AI CLI Box 是一款面向 Windows / macOS 的轻量级 AI CLI 桌面管理器，用来统一管理 Codex、Claude Code、Gemini CLI、OpenCode 等 AI 命令行工具。
 
-它不是新的大模型客户端，而是把你已经在终端里使用的 AI CLI 工具集中到一个更好管理的桌面工作台里：多会话、多项目、历史恢复、指令库、任务队列和生产力统计都在同一个窗口完成。
+  <p><b>给 AI CLI 用户的轻量级桌面工作台</b> · 本地优先 · 多工具 · 多项目 · 可恢复</p>
 
-本仓库只作为公开发布仓库使用，提供产品介绍、截图和安装包下载。
+  <p>
+    <a href="https://github.com/Rhys0902/ai-cli-box/releases/latest"><img alt="Release" src="https://img.shields.io/github/v/release/Rhys0902/ai-cli-box?style=flat-square&color=informational" /></a>
+    <a href="https://github.com/Rhys0902/ai-cli-box/stargazers"><img alt="Stars" src="https://img.shields.io/github/stars/Rhys0902/ai-cli-box?style=flat-square&color=yellow" /></a>
+    <img alt="Windows" src="https://img.shields.io/badge/Windows-10%20%2F%2011-4f8cff?style=flat-square" />
+    <img alt="macOS" src="https://img.shields.io/badge/macOS-supported-4f8cff?style=flat-square" />
+    <img alt="Tauri" src="https://img.shields.io/badge/Tauri-2.x-24c8db?style=flat-square" />
+    <img alt="React" src="https://img.shields.io/badge/React-Vite-61DAFB?style=flat-square&logo=react&logoColor=white" />
+    <img alt="Rust" src="https://img.shields.io/badge/Rust-backend-B7410E?style=flat-square&logo=rust&logoColor=white" />
+  </p>
 
-## 下载
+  <p>
+    <a href="#-特性">特性</a> ·
+    <a href="#-工作流一览">工作流一览</a> ·
+    <a href="#-截图">截图</a> ·
+    <a href="#-安装">安装</a> ·
+    <a href="#-技术栈">技术栈</a> ·
+    <a href="#-常见问题">常见问题</a>
+  </p>
+</div>
 
-请前往 GitHub Releases 下载最新版本：
+---
 
-- 最新版本：https://github.com/Rhys0902/ai-cli-box/releases/latest
-- 全部版本：https://github.com/Rhys0902/ai-cli-box/releases
+## ✨ 特性
 
-Windows 用户下载 `.exe` 安装包，macOS 用户下载对应芯片架构的 `.dmg` 安装包。
+- 🧠 **多 AI CLI 统一管理**：Codex、Claude Code、Gemini CLI、OpenCode 放在同一个窗口里使用
+- 📁 **项目级会话组织**：会话按项目分组，多项目、多会话并行时不用再靠终端窗口标题找上下文
+- 💻 **原生终端体验**：基于 xterm.js，保留 CLI 原本的交互方式，不接管模型响应
+- 🕘 **AI 历史恢复**：集中读取本机 AI CLI 历史，支持按工具、全局项目和当前项目查看
+- ⚡ **指令库与任务队列**：常用提示片段、项目命令和待办任务可以快速插入或排队发送
+- 🚀 **轻量启动快**：打包产物 < 10MB，常驻运行内存通常 < 10MB，资源占用远低于 Electron 同类
+- 📊 **生产力仪表盘**：查看会话数量、运行状态、任务和 本地 Token 用量趋势
+- 🔒 **本地优先**：应用本身不提供云同步，不上传你的代码或会话内容
+- 🔄 **自动更新**：支持启动检查、设置页手动检查和下载安装更新
 
-## 界面预览
+## 🧰 工作流一览
 
-### 工作台
+> AI CLI Box 不替代任何 CLI。你仍然使用原来的账号、模型和配置；它负责把终端会话组织成更稳定的桌面工作流。
 
-![workspace](docs/images/workspace.png)
+| 场景 | 能力 |
+| --- | --- |
+| 🧠 **AI 工具** | Codex · Claude Code · Gemini CLI · OpenCode |
+| 📁 **项目管理** | 按项目收纳会话 · 多项目并行 · 会话重命名 · 权限切换 |
+| 💻 **终端工作台** | PowerShell · cmd · zsh · bash · fish · 自定义 Shell |
+| 🕘 **会话历史** | 全局历史 · 按项目筛选 · 搜索排序 · 恢复到新会话 / 当前终端 |
+| ⚡ **指令库** | 内置指令 · 提示片段 · 项目命令 · 一键插入终端 |
+| ✅ **任务队列** | 多条任务排队 · 逐条发送 · 状态管理 |
+| 📊 **仪表盘** | 会话统计 · 任务统计 · Codex Token 趋势 |
+| ⚙️ **设置中心** | CLI 检测 · 配置文件 · 网络代理 · 快捷键 · 通知 · 自动更新 |
 
-主界面用于按项目管理 AI CLI 会话。左侧是项目和会话列表，中间是当前终端工作区，底部提供历史、指令库、任务队列和仪表盘入口。
+## 📸 截图
 
-### 新建会话
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="docs/images/workspace.png" alt="工作台" />
+      <sub><b>工作台 · 项目分组、多会话和终端主工作区</b></sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="docs/images/history.png" alt="AI 会话历史" />
+      <sub><b>AI 会话历史 · 按工具和项目查看，选择后再展示详情</b></sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <img src="docs/images/settings.png" alt="设置" />
+      <sub><b>设置中心 · CLI 检测、配置文件、代理和自动更新</b></sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="docs/images/commands.png" alt="指令库" />
+      <sub><b>指令库 · 常用提示片段、项目命令和快速插入</b></sub>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <img src="docs/images/dashboard.png" alt="生产力仪表盘" width="72%" />
+      <br />
+      <sub><b>生产力仪表盘 · 会话状态、任务和 Codex 本地 Token 趋势</b></sub>
+    </td>
+  </tr>
+</table>
 
-![new-session](docs/images/new-session.png)
+## 🚀 安装
 
-新建会话时可以选择 AI 工具、项目路径、终端 Shell 和运行权限。
+### 从 Release 下载（推荐）
 
-### 设置
+到 [Releases](https://github.com/Rhys0902/ai-cli-box/releases/latest) 下载对应平台的安装包：
 
-![settings](docs/images/settings.png)
+- **Windows**：优先下载 `.exe` 安装包；需要 MSI 部署时下载 `.msi`
+- **macOS Apple Silicon**：下载 `darwin-aarch64.dmg`
+- **macOS Intel**：下载 `darwin-x64.dmg`
 
-设置页集中管理 Codex、Claude、Gemini、OpenCode 以及终端、网络、快捷键等本地配置。
+安装后可以在设置页手动检查更新。应用启动时也会自动检查一次最新版本。
 
-### 任务队列
+### 使用前准备
 
-![task-queue](docs/images/task-queue.png)
+请先确保你需要的 AI CLI 已经能在本机终端中正常运行：
 
-任务队列适合把多条待处理事项排队发送到当前 AI CLI 会话。
+| 工具 | 命令 |
+| --- | --- |
+| Codex | `codex` |
+| Claude Code | `claude` |
+| Gemini CLI | `gemini` |
+| OpenCode | `opencode` |
 
-### 指令库
+## 🧭 快速开始
 
-![commands](docs/images/commands.png)
-
-指令库内置常用 CLI 命令和提示片段，点击后可快速插入当前终端。
-
-### 仪表盘
-
-![dashboard](docs/images/dashboard.png)
-
-仪表盘用于查看会话、项目、任务和 Codex 本地 Token 用量趋势。
-
-## 最新优化
-
-- 左侧会话列表、顶部标签页和设置页统一使用工具品牌图标，Codex、Claude、Gemini、OpenCode 更容易区分。
-- 工作区布局减少重复信息，状态栏保留历史、指令、任务队列和仪表盘入口，把更多空间留给终端。
-- 支持从状态栏直接打开当前项目目录，便于在文件管理器中快速定位代码。
-- 优化 Windows 端粘贴体验，文字和图片均可通过 Ctrl+V 进入当前终端会话。
-- 优化 AI 输出中的 diff 高亮，减少延迟和局部未渲染问题。
-- 图片粘贴后会显示短暂缩略图预览，支持放大和关闭。
-
-## 适合谁使用
-
-- 经常同时使用多个 AI CLI 工具的开发者
-- 希望按项目管理 AI 对话和终端会话的用户
-- 需要在 Codex、Claude、Gemini、OpenCode 之间快速切换的团队
-- 想保留原生命令行能力，同时获得桌面端管理体验的人
-
-## 核心功能
-
-### 多 AI CLI 会话管理
-
-- 支持 Codex、Claude Code、Gemini CLI、OpenCode
-- 每个会话独立维护项目路径、Shell、运行状态和终端输出
-- 支持同一项目下创建多个会话
-- 支持自定义会话名称；留空时自动生成
-- 左侧按项目分组，便于快速定位上下文
-
-### 终端工作台
-
-- 内置 xterm.js 终端
-- 支持 Windows PowerShell、PowerShell 7、cmd
-- 支持 macOS / Linux 下 zsh、bash、fish
-- 支持自定义 Shell
-- 保留 AI CLI 原本的交互方式，不额外劫持模型响应
-
-### Ai 历史会话
-
-- 读取本机 Ai 会话历史
-- 支持按当前项目筛选
-- 支持搜索和排序
-- 支持从历史会话继续对话
-- 尽量复用 Ai 自身的历史恢复能力，降低兼容风险
-
-### 指令库
-
-- 根据当前 AI 工具展示可用内置指令
-- 支持 Codex、Claude、Gemini、OpenCode 常用命令
-- 支持片段模板，例如代码审查、解释代码、修复错误、重构优化、生成测试、性能分析、生成 TypeScript 类型、总结提交信息等
-- 支持编辑片段内容
-- 点击后插入到当前终端输入区，由用户按 Enter 执行
-
-### 任务队列
-
-- 将多条待处理任务加入队列
-- 支持逐条发送到当前 AI CLI 会话
-- 适合批量排队执行需求、修复点、检查项或 TODO
-- 任务状态可管理，避免遗漏
-
-### 生产力仪表盘
-
-- 查看今日会话、本周会话、活跃天数、运行中会话、待办任务等指标
-- 查看最近活动趋势
-- 查看常用项目统计
-- 查看 Codex 本地 Token 用量统计
-- 不做固定价格估算，避免模型价格变化导致统计误导
-
-### 设置与本地配置
-
-- 默认语言：简体中文
-- 支持中英文界面
-- 支持深色 / 浅色 / 跟随系统主题
-- 支持终端字体、字号、默认 Shell、滚动行数等设置
-- 支持网络代理配置
-- 配置和会话数据保存在本地
-
-## 技术特点
-
-- Tauri 2 桌面壳，安装包体积相对轻量
-- React + Vite 前端，界面响应快
-- Rust 后端管理 PTY、Shell、会话历史和本地能力
-- xterm.js 提供接近原生终端的交互体验
-- 本地优先，不依赖额外云服务
-
-## 性能与轻量化
-
-AI CLI Box 采用 Tauri 2 + Rust 后端，不内置 Chromium 运行时，安装包和常驻资源占用相对更轻。应用本身不承载模型推理，主要负责 AI CLI 进程调度、终端展示、本地会话管理和常用工具入口。
-
-- 按需启动：只有创建或恢复会话时才启动对应的 AI CLI 进程，空项目不会自动拉起终端
-- 会话隔离：每个会话独立维护进程、工作目录和终端状态，切换标签时不重复创建 CLI
-- 本地缓存：项目、会话、设置、历史索引和统计数据优先保存在本地，减少重复扫描和等待
-- 终端优先：界面布局尽量把空间留给终端输出，侧边栏、弹窗和仪表盘保持轻量
-- 可控资源：关闭会话会停止对应终端进程，减少长时间使用后的无效占用
-
-## 下载安装
-
-请在 GitHub Releases 中下载对应系统的打包版本。普通用户不需要本地构建。
-
-- Windows：下载 `.exe` 安装包或 portable 压缩包，按提示安装或解压后运行。
-- macOS：下载 `.dmg` 安装包，拖入 Applications 后打开。
-
-如果 macOS 提示应用无法打开或需要开发者认证，可在终端执行下面命令移除隔离标记后再打开：
-
-```bash
-xattr -d com.apple.quarantine "/Applications/AI CLI Box.app"
-```
-
-使用前请确保你需要的 AI CLI 已经在系统中安装并可在终端中运行，例如：
-
-- `codex`
-- `claude`
-- `gemini`
-- `opencode`
-
-## 首次使用
-
-1. 先安装你需要使用的 AI CLI 工具，例如 `codex`、`claude`、`gemini` 或 `opencode`。
-2. 打开 AI CLI Box。
-3. 点击「新建会话」。
-4. 选择 AI 工具。
-5. 选择项目目录。
-6. 选择 Shell，例如 PowerShell 7、Windows PowerShell、cmd、zsh、bash。
-7. 点击创建，进入终端会话。
+1. 安装你需要的 AI CLI，例如 `codex`、`claude`、`gemini` 或 `opencode`
+2. 下载并安装 AI CLI Box
+3. 点击「新建会话」
+4. 选择 AI 工具、项目目录、Shell 和运行权限
+5. 创建会话，在内置终端中继续使用原来的 AI CLI
 
 如果不填写会话名称，应用会根据项目目录自动生成名称。
 
-## 常见问题
+## 🧱 技术栈
+
+| 层 | 选型 |
+| --- | --- |
+| 桌面框架 | Tauri 2 |
+| 前端 | React + Vite |
+| 后端 | Rust |
+| 终端 | xterm.js |
+| 本地能力 | PTY · Shell · 会话历史 · 配置读写 · 系统托盘 · 自动更新 |
+
+## 🔄 最近更新
+
+- 新增自动更新能力，支持启动检查、设置页手动检查和下载安装
+- 优化 AI 会话历史面板，支持按工具、全局项目和当前项目查看
+- 新增项目会话右键菜单，支持重命名、权限切换、查看历史和删除
+- 优化终端主题、滚动条贴合、右侧混排文本裁切和输入光标异常问题
+- 优化设置页中的 CLI 检测、配置文件读取和 Windows 检测窗口体验
+- 新增关闭窗口确认和系统托盘相关体验优化
+
+## ❓ 常见问题
 
 ### 为什么新建会话后看起来像普通终端？
 
-AI CLI Box 的目标是管理 AI CLI 终端，而不是替代这些 CLI。会话启动后，本质上仍然运行 `codex`、`claude`、`gemini` 或 `opencode`，所以你看到的是原工具自己的交互界面。
+这是预期行为。AI CLI Box 的目标是管理 AI CLI 终端，而不是替代这些 CLI。会话启动后，本质上仍然运行 `codex`、`claude`、`gemini` 或 `opencode`。
 
 ### 为什么要选择 Shell？
 
@@ -189,28 +150,27 @@ AI CLI Box 的目标是管理 AI CLI 终端，而不是替代这些 CLI。会话
 
 ### 历史会话来自哪里？
 
-Codex 历史会话来自本机 Codex 保存的会话数据。AI CLI Box 只读取并整理这些记录，继续会话时仍交给 Codex 自己恢复。
+历史会话来自本机对应 AI CLI 保存的数据。AI CLI Box 只读取并整理这些记录，继续会话时仍交给对应 CLI 自己恢复。
 
 ### 是否会上传我的代码或会话？
 
-AI CLI Box 本身是本地桌面应用，不提供云端同步服务。实际模型请求由你启动的 AI CLI 工具处理，请以对应 CLI 工具的账号、配置和隐私策略为准。
+不会。AI CLI Box 本身是本地桌面应用，不提供云端同步服务。实际模型请求由你启动的 AI CLI 工具处理，请以对应 CLI 工具的账号、配置和隐私策略为准。
 
-## 路线图
+### macOS 提示应用无法打开怎么办？
 
-- 更完整的 Claude / Gemini / OpenCode 历史支持
-- 项目命令配置
-- 更完善的任务队列自动执行能力
-- 更细的终端主题和快捷键配置
-- Windows / macOS 安装包自动发布
-- 签名与自动更新
+如果 macOS 提示应用无法打开或需要开发者认证，可在终端执行下面命令移除隔离标记后再打开：
 
-## 项目定位
+```bash
+xattr -d com.apple.quarantine "/Applications/AI CLI Box.app"
+```
 
-AI CLI Box 的第一版目标是做一个实用、轻量、稳定的 AI CLI 终端管理器：
+## 💬 反馈
 
-- 左侧专注项目和会话管理
-- 中间专注终端工作区
-- 底部提供历史、指令、任务队列、仪表盘等全局入口
-- 设置集中管理工具、Shell、网络和应用偏好
+- Issue：[github.com/Rhys0902/ai-cli-box/issues](https://github.com/Rhys0902/ai-cli-box/issues)
+- Releases：[github.com/Rhys0902/ai-cli-box/releases](https://github.com/Rhys0902/ai-cli-box/releases)
 
-后续功能会围绕真实开发流程继续扩展，而不是做成复杂臃肿的平台。
+---
+
+<div align="center">
+  <sub>A local-first desktop workspace for Codex, Claude Code, Gemini CLI and OpenCode.</sub>
+</div>
